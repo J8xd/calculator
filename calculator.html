@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Numbers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div  class="calculator">
+        <div class="screen1">
+            <form name="form2">
+                <div class="screenform" id="res2"></div>
+            </form>
+        </div>  
+        <div class="screen2">
+            <form name="form1">
+                <input type="text" placeholder="0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(..*)./g, '$1');" id="res" >
+            </form>
+        </div>                    
+        <button id="delall" class="func">C</button>
+        <button id="delel" class="func">CE</button>
+        <button id="perc" class="func">D</button>
+        <button id="split" class="zn">/</button>
+        <button id="seven">7</button>
+        <button id="eight">8</button>
+        <button id="nine">9</button>
+        <button id="multi" class="zn">*</button>
+        <button id="four">4</button>
+        <button id="five">5</button>
+        <button id="six">6</button>
+        <button id="minus" class="zn">-</button>
+        <button id="one">1</button>
+        <button id="two">2</button>
+        <button id="three">3</button>
+        <button id="plus" class="zn">+</button>
+        <button id="revsymb" class="zn">&#9829</button>
+        <button id="zero" class="zn">0</button>
+        <button id="dot" class="zn">.</button>
+        <button id="anws" class="zn">=</button>           
+    </div>
+    <script src="calculator.js"></script>
+    
+
+</body>
+</html>
