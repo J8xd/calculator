@@ -22,16 +22,24 @@ const perc=document.getElementById('perc')
 const revsymb=document.getElementById('revsymb')
 let condition = false
 function input (num) {
-    if (res.value=="0" && num=="0"){
-        res.value=res.value
-    }
-    else if (res.value=="0" && num!="0" ) {
+    if (condition){
         res.value=num
-
+        condition=false
     }
     else{
+        if (res.value=="0" && num=="0"){
+            res.value=res.value
+        }
+
+        else if (res.value=="0" && num!="0" ) {
+        res.value=num
+
+        }
+        else{
         res.value+=num
-    } 
+        }
+    }
+
 } 
 const numbers=[zero, one, two, three, four, five, six, seven, eight, nine]
 for (let i=0; i<numbers.length; i++){
@@ -63,21 +71,28 @@ function expres (expect){
     res.value=chisl
     res.value=""
 }
+
 const oper=[plus,minus,multi,split]
 for (let i=0; i<oper.length; i++){
     oper[i].addEventListener('click', function(){expres(oper[i])}) 
     
 } 
 function point (){
-    if (res.value.indexOf('.')==-1 && res.value!=""){
-    res.value = res.value + "."
+    if (condition==true){
+        result.value="0."
+        condition=false    
     }
     else{
-        res.value = res.value
+        if (res.value.indexOf('.')==-1 && res.value!=""){
+            res.value = res.value + "."
+        }
+        else{
+            res.value = res.value
+        }
     }
 }
 dot.addEventListener('click', function(){point()})
-const calc = () => {
+function calc (){
     condition = true
     const value = res2.innerHTML + res.value
     if (res.value =="result is undefined"){
@@ -99,6 +114,7 @@ const calc = () => {
         res.value = (Math.round(eval(value)*10000000)/10000000)
     }
     res2.innerHTML = ""
+
 }
 anws.addEventListener('click', function(){calc()})
 
